@@ -16,6 +16,7 @@ object Constants {
     const val FAILURE = "Failure"
     const val ID = "id"
     const val E_MAIL = "email"
+    const val FULL_NAME = "name"
     const val NICKNAME = "nickname"
     const val PHONE_NUMBER = "phonenumber"
 

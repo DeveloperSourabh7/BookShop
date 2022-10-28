@@ -1,23 +1,24 @@
-package com.sourabh.bookshop.ui.login.signin
+package com.sourabh.bookshop.viewModel
 
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.sourabh.bookshop.repository.UsersRepository
 
 class SignInFragmentViewModel : ViewModel() {
 
-//    private var usersRepo = UsersRepository()
+    private var usersRepo = UsersRepository()
 
     private var _isSignIn = MutableLiveData<Boolean>()
     val isSignIn: LiveData<Boolean>
         get() = _isSignIn
 
     init {
-//        _isSignIn = usersRepo.isSignIn
+        _isSignIn = usersRepo.isSignIn
     }
 
     fun signIn(eMail: String, password: String) {
-//        usersRepo.signIn(eMail, password)
+        usersRepo.signIn(eMail, password)
     }
 }

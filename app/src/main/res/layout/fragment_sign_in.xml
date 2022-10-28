@@ -4,13 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--    <data>-->
+    <data>
 
-<!--        <variable-->
-<!--            name="signInFragmentObject"-->
-<!--            type="com.sourabh.bookshop.ui.login.signin.SignInFragment" />-->
+        <variable
+            name="signInFragmentObject"
+            type="com.sourabh.bookshop.ui.login.signin.SignInFragment" />
 
-<!--    </data>-->
+    </data>
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -113,6 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_biggest"
             android:backgroundTint="@color/chardonnay"
+            android:onClick="@{() -> signInFragmentObject.signInButton(edEmails.getText().toString(),edPassword.getText().toString())}"
             android:text="@string/sign_in"
             android:textSize="@dimen/button_text_size"
             android:textAlignment="center"

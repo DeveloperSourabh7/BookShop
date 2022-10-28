@@ -2,13 +2,16 @@ package com.sourabh.bookshop.ui.login.signup
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.sourabh.bookshop.R
+import com.sourabh.bookshop.common.showSnackbar
 import com.sourabh.bookshop.databinding.FragmentSignUpBinding
+import com.sourabh.bookshop.viewModel.SignUpFragmentViewModel
 
 class SignUpFragment : Fragment() {
 
@@ -27,76 +30,80 @@ class SignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        initObservers()
+        binding.signUpFragmentObject = this
+        initObservers()
     }
 
-//    private fun initObservers() {
-//
-//        with(binding) {
-//
-//            with(viewModel) {
-//
-//                isInfosValid.observe(viewLifecycleOwner) {
-//                    if (it.not()) showSnackbar(
-//                        requireView(),
-//                        R.string.incomplete_information_entered
-//                    )
-//                }
-//
-//                isValidMail.observe(viewLifecycleOwner) {
-//                    if (it.not()) {
-//                        emailInputLayout.error = getString(R.string.invalid_mail)
-//                    } else {
-//                        emailInputLayout.error = ""
-//                    }
-//                }
-//
-//                isPasswordMatch.observe(viewLifecycleOwner) {
-//                    if (it.not()) {
-//                        passwordInputLayout.error = getString(R.string.password_match_error)
-//                        confirmPasswordInputLayout.error = getString(R.string.password_match_error)
-//                    } else {
-//                        passwordInputLayout.error = ""
-//                        confirmPasswordInputLayout.error = ""
-//                    }
-//                }
-//
-//                isSignUp.observe(viewLifecycleOwner) {
-//                    if (it) {
-//                        showSnackbar(requireView(), R.string.sign_up_snack_text)
-//                        clearFields()
-//                    } else {
-//                        emailInputLayout.error = getString(R.string.registered_mail)
-//                    }
-//                }
-//            }
-//        }
-//    }
+    private fun initObservers() {
+
+        with(binding) {
+
+            with(viewModel) {
+
+                 isInfosValid.observe(viewLifecycleOwner) {
+                     Log.e("Inside SignUp Fragment ","IsValid is working fine")
+
+                     if (it.not()) showSnackbar(
+                        requireView(),
+                        R.string.incomplete_information_entered
+                    )
+                }
+
+                isValidMail.observe(viewLifecycleOwner) {
+                    if (it.not()) {
+                        tilEmail.error = getString(R.string.invalid_mail)
+                    } else {
+                        tilEmail.error = ""
+                    }
+                }
+
+                isPasswordMatch.observe(viewLifecycleOwner) {
+                    if (it.not()) {
+                        tilPassword.error = getString(R.string.password_match_error)
+                        tilCnfPassword.error = getString(R.string.password_match_error)
+                    } else {
+                        tilPassword.error = ""
+                        tilCnfPassword.error = ""
+                    }
+                }
+
+                isSignUp.observe(viewLifecycleOwner) {
+                    if (it) {
+                        showSnackbar(requireView(), R.string.sign_up_snack_text)
+                        clearFields()
+                    } else {
+                        tilEmail.error = getString(R.string.registered_mail)
+                    }
+                }
+            }
+        }
+    }
 
     fun signUpButton(
         email: String,
+        fullName: String,
+        phoneNumber: String,
         password: String,
         confirmPassword: String,
-        nickname: String,
-        phoneNumber: String
     ) {
-//        viewModel.signUp(email, password, confirmPassword, nickname, phoneNumber)
+        Log.e("Inside SignUp Fragment ","Email is working fine")
+        viewModel.signUp(email, fullName, phoneNumber, password, confirmPassword )
     }
 
-//    private fun clearFields() {
-//        with(binding) {
-//            emailEditText.setText("")
-//            emailInputLayout.error = ""
-//            passwordEditText.setText("")
-//            passwordInputLayout.error = ""
-//            confirmPasswordEditText.setText("")
-//            confirmPasswordInputLayout.error = ""
-//            nicknameEditText.setText("")
-//            nicknameInputLayout.error = ""
-//            phoneNumberEditText.setText("")
-//            phoneNumberInputLayout.error = ""
-//        }
-//    }
+    private fun clearFields() {
+        with(binding) {
+            edEmail.setText("")
+            tilEmail.error = ""
+            edPassword.setText("")
+            tilPassword.error = ""
+            edCnfPassword.setText("")
+            tilCnfPassword.error = ""
+            edFullname.setText("")
+            tilFullname.error = ""
+            edMobile.setText("")
+            tilMobile.error = ""
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

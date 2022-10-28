@@ -17,17 +17,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val navHostFragment =
-//            supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
-//        NavigationUI.setupWithNavController(binding.bottomNav, navHostFragment.navController)
-//
-//        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
-//            if (destination.id == R.id.cardCard) {
-//                binding.bottomNav.visibility = View.GONE
-//            } else {
-//                binding.bottomNav.visibility = View.VISIBLE
-//            }
-//        }
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
+        NavigationUI.setupWithNavController(binding.bottomNav, navHostFragment.navController)
+
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.cardCard) {
+                binding.bottomNav.visibility = View.GONE
+            } else {
+                binding.bottomNav.visibility = View.VISIBLE
+            }
+        }
     }
 
 }

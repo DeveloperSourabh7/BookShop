@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<!--    <data>-->
+
+<!--        <variable-->
+<!--            name="signUpFragmentObject"-->
+<!--            type="com.canerture.booksapp.ui.login.signup.SignUpFragment" />-->
+<!--    </data>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cd_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/btn_signup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent=".9">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/banner"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/sign_up"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="18dp"
+                        android:text="Register With Your Email"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/banner" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_email"
+                        style="@style/Lazy_TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="20dp"
+                        android:hint="Email Id"
+                        app:errorEnabled="true"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/banner"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent=".9">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ed_email"
+                            style="@style/Lazy_InputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textEmailAddress"
+                            tools:ignore="SpeakableTextPresentCheck"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_fullname"
+                        style="@style/Lazy_TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="Full Name"
+                        app:errorEnabled="true"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/til_email"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent=".9">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ed_fullname"
+                            style="@style/Lazy_InputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:ignore="SpeakableTextPresentCheck"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_mobile"
+                        style="@style/Lazy_TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Mobile"
+                        app:errorEnabled="true"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/til_fullname"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent=".9">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signin"
+                            style="@style/Lazy_InputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="phone"
+                            tools:ignore="SpeakableTextPresentCheck"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_password"
+                        style="@style/Lazy_TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Password"
+                        app:endIconCheckable="true"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="@color/black"
+                        app:helperText="@string/password_hint"
+                        app:helperTextEnabled="true"
+                        app:helperTextTextAppearance="@style/HelperText"
+                        app:helperTextTextColor="@color/black"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/til_mobile"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent=".9">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ed_password"
+                            style="@style/Lazy_InputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textPassword"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_cnf_password"
+                        style="@style/Lazy_TextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Confirm password"
+                        app:endIconCheckable="true"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="@color/black"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/til_password"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent=".9">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ed_cnf_password"
+                            style="@style/Lazy_InputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            tools:ignore="SpeakableTextPresentCheck"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cb_accept"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="10dp"
+                        android:nextFocusDown="@id/btn_signup"
+                        android:text="I agree to the terms and privacy policy"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:buttonTint="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/til_cnf_password"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent=".9" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_signup"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_biggest"
+                android:backgroundTint="@color/chardonnay"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/button_text_size"
+                android:textAlignment="center"
+                android:textColor="@color/eden"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cd_container"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent=".9"
+                tools:ignore="TextContrastCheck" />
+
+            <!--            <androidx.legacy.widget.Space-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="15dp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/btn_signup" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

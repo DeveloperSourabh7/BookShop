@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.sourabh.bookshop.MainActivity
 import com.sourabh.bookshop.R
 import com.sourabh.bookshop.databinding.FragmentSignInBinding
+import com.sourabh.bookshop.ui.main.MainActivity
 import com.sourabh.bookshop.viewModel.SignInFragmentViewModel
 
 class SignInFragment : Fragment() {

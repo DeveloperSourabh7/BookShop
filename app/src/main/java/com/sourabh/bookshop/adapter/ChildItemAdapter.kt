@@ -1,5 +1,6 @@
 package com.sourabh.bookshop.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,21 +35,7 @@ class ChildItemAdapter(
         holder: ViewHolder,
         position: Int
     ) {
-        holder.progressBar.progress=30
-        holder.progressBar.max=100
-        if (parentItem.title=="Continue Watching" ) {
-            var imageViewLayoutParams = holder.imageView.layoutParams as ConstraintLayout.LayoutParams
-            imageViewLayoutParams.width = 205.toPx(holder.itemView.context)
-            imageViewLayoutParams.height = 135.toPx(holder.itemView.context)
-            holder.progressBar.visibility=View.VISIBLE
-            holder.playicon.visibility=View.VISIBLE
-        }
-        else if (parentItem.title=="Favorites" ) {
-            var imageViewLayoutParams = holder.imageView.layoutParams as ConstraintLayout.LayoutParams
-            imageViewLayoutParams.width = 240.toPx(holder.itemView.context)
-            imageViewLayoutParams.height = 135.toPx(holder.itemView.context)
-        }
-        else if(parentItem.title=="Serials") {
+      if(parentItem.title=="Explore More Books") {
             var rootLayoutParams = holder.cvRoot.layoutParams as RecyclerView.LayoutParams
             var imageViewLayoutParams = holder.imageView.layoutParams as ConstraintLayout.LayoutParams
             var contentViewLayoutParams = holder.content.layoutParams as FrameLayout.LayoutParams
@@ -64,25 +51,11 @@ class ChildItemAdapter(
             imageViewLayoutParams.topToTop = ConstraintLayout.LayoutParams.UNSET
             //Changing the content ConstraintLayout params
             contentViewLayoutParams.height = ConstraintLayout.LayoutParams.MATCH_PARENT
-        }else if (parentItem.title=="Live Tv") {
-            var imageViewLayoutParams = holder.imageView.layoutParams as ConstraintLayout.LayoutParams
-            imageViewLayoutParams.width = 192.toPx(holder.itemView.context)
-            imageViewLayoutParams.height = 108.toPx(holder.itemView.context)
-            holder.tvSeason.visibility = View.VISIBLE
-            holder.tvDetails.visibility = View.VISIBLE
-        }else if (parentItem.title=="Serials" || parentItem.title=="My Serials") {
-            var imageViewLayoutParams = holder.imageView.layoutParams as ConstraintLayout.LayoutParams
-            imageViewLayoutParams.width = 240.toPx(holder.itemView.context)
-            imageViewLayoutParams.height = 135.toPx(holder.itemView.context)
-            if (parentItem.title=="My Serials"){
-                holder.cvRoot.setOnClickListener{
-                    holder.ivPlayer.visibility = View.VISIBLE
-                    clickListener(parentItem.ChildItemList[position])
-                }
-            }
         }
+
         holder.cvRoot.setOnClickListener{
 //            holder.ivPlayer.visibility = View.VISIBLE
+            Log.e("Insed ChildeItem ","parentItem.ChildItemList[position] "+parentItem.ChildItemList[position])
             clickListener(parentItem.ChildItemList[position])
         }
 
@@ -124,11 +97,6 @@ class ChildItemAdapter(
         var imageView: ImageView = itemView.findViewById(R.id.iv_content_image)
         var cvRoot: CardView = itemView.findViewById(R.id.root)
         var content: ConstraintLayout = itemView.findViewById(R.id.content)
-        var tvSeason: TextView = itemView.findViewById(R.id.tvSeasonName)
-        var tvDetails: TextView = itemView.findViewById(R.id.tvEpisodeDetails)
-        var ivPlayer: ImageView = itemView.findViewById(R.id.ivPlay)
-        var progressBar: ProgressBar = itemView.findViewById(R.id.progressBar)
-        var playicon: ImageView = itemView.findViewById(R.id.play)
       override fun onClick(p0: View?) {
             TODO("Not yet implemented")
         }

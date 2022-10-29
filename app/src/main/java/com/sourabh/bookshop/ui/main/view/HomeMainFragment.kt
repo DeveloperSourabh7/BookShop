@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.sourabh.bookshop.R
 import com.sourabh.bookshop.adapter.ParentItemAdapter
 import com.sourabh.bookshop.databinding.FragmentHomeMainBinding
@@ -41,24 +43,24 @@ class HomeMainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         init()
         setupAdapter()
+        setBanner()
     }
 
     private fun init(){
         parentItemsList = ArrayList()
         childItemsList = ArrayList()
-        childItemsList.add(ChildItem("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYUlhC5e96MEqqTye1za7lOBLD4KvYGSZ8x-Iz3pk&s"," https://drive.google.com/file/d/1w_Bwv8IzbYvrLDupRrvTDeKrQEtwd1Ci/view"))
-        childItemsList.add(ChildItem("https://filmschoolrejects.com/wp-content/uploads/2020/01/2019-rewind-animated-series.jpg"," https://drive.google.com/file/d/1w_Bwv8IzbYvrLDupRrvTDeKrQEtwd1Ci/view"))
-        childItemsList.add(ChildItem("https://filmschoolrejects.com/wp-content/uploads/2019/12/decade-animatedseries.jpg"," https://drive.google.com/file/d/1w_Bwv8IzbYvrLDupRrvTDeKrQEtwd1Ci/view"))
-        childItemsList.add(ChildItem("https://static-koimoi.akamaized.net/wp-content/new-galleries/2021/05/shinchan-family-guy-others-cartoon-series-that-face-a-ban-due-to-its-not-so-kiddish-content004.jpg"," https://drive.google.com/file/d/1w_Bwv8IzbYvrLDupRrvTDeKrQEtwd1Ci/view"))
-        childItemsList.add(ChildItem("https://www.indiewire.com/wp-content/uploads/2017/05/d691d2e7-5227-4371-905e-5ff6986f2f6b-young-justice-league-the-animated-series-superman-images-gallery-604927.jpg?w=780"," https://drive.google.com/file/d/1w_Bwv8IzbYvrLDupRrvTDeKrQEtwd1Ci/view"))
+        childItemsList.add(ChildItem("https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-ec-1-looking-for-lala.jpg"))
+        childItemsList.add(ChildItem("https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"))
+        childItemsList.add(ChildItem("https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-pp-mrh-4-thy-fathers-house.jpg"))
+        childItemsList.add(ChildItem("https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-km-1-godhead.jpg"))
+        childItemsList.add(ChildItem("https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-ec-5stones-into-the-sky.jpg"))
 
-        parentItemsList.add(ParentItem("Popular Shows", childItemsList))
-        parentItemsList.add(ParentItem("Continue Watching", childItemsList))
-        parentItemsList.add(ParentItem("Favorites", childItemsList))
-        parentItemsList.add(ParentItem("Serials", childItemsList))
-        parentItemsList.add(ParentItem("Live Tv", childItemsList))
-        parentItemsList.add(ParentItem("Famous Seasons", childItemsList))
-        parentItemsList.add(ParentItem("My Serials", childItemsList))
+        parentItemsList.add(ParentItem("Recommended for you", childItemsList))
+        parentItemsList.add(ParentItem("New Releases", childItemsList))
+        parentItemsList.add(ParentItem("Best Books", childItemsList))
+        parentItemsList.add(ParentItem("Awarded Books", childItemsList))
+        parentItemsList.add(ParentItem("Ancient Epic", childItemsList))
+        parentItemsList.add(ParentItem("Explore More Books", childItemsList))
 
     }
 
@@ -69,6 +71,14 @@ class HomeMainFragment : Fragment() {
         binding.recyclerView.adapter= parentItemAdapter
         binding.recyclerView.layoutManager= LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
     }
+    private fun setBanner() {
+        val imageList = ArrayList<SlideModel>() // Create image list
+        imageList.add(SlideModel("https://bit.ly/2YoJ77H", "The animal population decreased by 58 percent in 42 years.",
+            ScaleTypes.CENTER_CROP))
+        imageList.add(SlideModel("https://bit.ly/2BteuF2", "Elephants and tigers may become extinct.",ScaleTypes.CENTER_CROP))
+        imageList.add(SlideModel("https://bit.ly/3fLJf72", "And people do that.",ScaleTypes.CENTER_CROP))
 
+        binding.imageSlider.setImageList(imageList)
+    }
 
 }

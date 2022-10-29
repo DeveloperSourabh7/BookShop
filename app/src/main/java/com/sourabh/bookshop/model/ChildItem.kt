@@ -1,6 +1,5 @@
 package com.sourabh.bookshop.model
 
 data class ChildItem(
-    var imageUrl: String,
-    var videoUrl: String
+    var imageUrl: String
 )

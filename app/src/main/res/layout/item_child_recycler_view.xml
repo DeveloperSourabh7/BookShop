@@ -12,65 +12,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/iv_content_image"
-                android:layout_width="252dp"
-                android:layout_height="360dp"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:scaleType="fitCenter"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvSeasonName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:textColor="@color/black"
-                android:visibility="gone"
-                android:paddingTop="12dp"
-                android:paddingStart="12dp"
-                android:text="super genios"
-                app:layout_constraintTop_toBottomOf="@id/iv_content_image"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvEpisodeDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:visibility="gone"
-                android:paddingStart="12dp"
-                android:padding="4dp"
-                android:text="episode"
-                app:layout_constraintTop_toBottomOf="@id/tvSeasonName"/>
-            <ImageView
-                android:id="@+id/ivPlay"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="6dp"
-                android:visibility="gone"
-                android:src="@drawable/ic_launcher_background"
-                app:layout_constraintStart_toStartOf="@id/iv_content_image"
-                app:layout_constraintEnd_toEndOf="@id/iv_content_image"
-                app:layout_constraintTop_toTopOf="@id/iv_content_image"
-                app:layout_constraintBottom_toBottomOf="@id/iv_content_image"/>
-            <ImageView
-                android:id="@+id/play"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:paddingStart="12dp"
-                android:paddingBottom="8dp"
-                app:layout_constraintStart_toStartOf="@id/iv_content_image"
-                app:layout_constraintBottom_toTopOf="@id/progressBar"/>
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="228dp"
-                android:layout_height="20dp"
-                android:visibility="gone"
-                style="?android:attr/progressBarStyleHorizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_content_image"
-                app:layout_constraintStart_toStartOf="@id/iv_content_image"
-                android:paddingBottom="8dp"/>
+                android:scaleType="fitXY"
+                android:contentDescription="TODO" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

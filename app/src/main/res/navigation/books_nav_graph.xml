@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/books_nav_graph"
-    app:startDestination="@id/booksFragment">
+    app:startDestination="@id/homeMainFragment">
 
     <fragment
         android:id="@+id/paymentFragment"
@@ -50,4 +50,8 @@
             android:id="@+id/action_booksFragment_to_bookDetailBottomSheet"
             app:destination="@id/bookDetailBottomSheet" />
     </fragment>
+    <fragment
+        android:id="@+id/homeMainFragment"
+        android:name="com.sourabh.bookshop.ui.main.view.HomeMainFragment"
+        android:label="HomeMainFragment" />
 </navigation>

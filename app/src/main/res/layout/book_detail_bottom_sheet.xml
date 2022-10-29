@@ -4,13 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--    <data>-->
+    <data>
 
-<!--        <variable-->
-<!--            name="bookModel"-->
-<!--            type="com.canerture.booksapp.data.model.BookModel" />-->
+        <variable
+            name="bookModel"
+            type="com.sourabh.bookshop.model.BookModel" />
 
-<!--    </data>-->
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

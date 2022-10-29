@@ -3,13 +3,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--    <data>-->
+    <data>
 
-<!--        <variable-->
-<!--            name="bookModel"-->
-<!--            type="com.canerture.booksapp.data.model.BooksBasketRoomModel" />-->
+        <variable
+            name="bookModel"
+            type="com.sourabh.bookshop.model.BooksBasketRoomModel" />
 
-<!--    </data>-->
+    </data>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"

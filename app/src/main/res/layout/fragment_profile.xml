@@ -2,13 +2,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--    <data>-->
+    <data>
 
-<!--        <variable-->
-<!--            name="profileFragmentObject"-->
-<!--            type="com.canerture.booksapp.ui.main.profile.ProfileFragment" />-->
+        <variable
+            name="profileFragmentObject"
+            type="com.sourabh.bookshop.ui.main.profile.ProfileFragment" />
 
-<!--    </data>-->
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -3,16 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/books_nav_graph"
-    app:startDestination="@id/paymentFragment">
+    app:startDestination="@id/homeMainFragment">
 
     <fragment
         android:id="@+id/paymentFragment"
         android:name="com.sourabh.bookshop.ui.main.payment.PaymentFragment"
         android:label="fragment_payment"
-        tools:layout="@layout/fragment_payment" />
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_booksBasketFragment"
+            app:destination="@id/booksBasketFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_booksFragment"
+            app:destination="@id/booksFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.sourabh.bookshop.ui.main.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
+
+    <dialog
+        android:id="@+id/bookDetailBottomSheet"
+        android:name="com.sourabh.bookshop.ui.main.bookdetail.BookDetailBottomSheet"
+        android:label="BookDetailBottomSheet"
+        tools:layout="@layout/book_detail_bottom_sheet">
+        <argument
+            android:name="bookModel"
+            app:argType="com.sourabh.bookshop.model.BookModel" />
+    </dialog>
+    <fragment
+        android:id="@+id/booksBasketFragment"
+        android:name="com.sourabh.bookshop.ui.main.booksbasket.BooksBasketFragment"
+        android:label="BooksBasketFragment"
+        tools:layout="@layout/fragment_books_basket">
+        <action
+            android:id="@+id/action_booksBasketFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/booksFragment"
+        android:name="com.sourabh.bookshop.ui.main.books.BooksFragment"
+        android:label="BooksFragment"
+        tools:layout="@layout/fragment_books">
+        <action
+            android:id="@+id/action_booksFragment_to_bookDetailBottomSheet"
+            app:destination="@id/bookDetailBottomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeMainFragment"
+        android:name="com.sourabh.bookshop.ui.main.view.HomeMainFragment"
+        android:label="HomeMainFragment" />
 </navigation>
